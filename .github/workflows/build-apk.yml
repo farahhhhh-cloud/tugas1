@@ -21,7 +21,7 @@ jobs:
 
       - name: Upgrade Gradle
         run: |
-          sed -i 's#gradle-[0-9.]*-all.zip#gradle-8.14.0-all.zip#' android/gradle/wrapper/gradle-wrapper.properties
+          sed -i 's#gradle-[0-9.]*-all.zip#gradle-8.14.4-all.zip#' android/gradle/wrapper/gradle-wrapper.properties
 
       - name: Get dependencies
         run: flutter pub get
