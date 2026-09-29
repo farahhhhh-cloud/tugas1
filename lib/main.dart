@@ -1,41 +1,125 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(Tugas());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class Tugas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Pantai Wonogoro"),
+        ),
+        body: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Container(
+                width: double.infinity,
+                child: Image.asset(
+                  'assets/PantaiWonogoro.jpg',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 6,
+              child: Row(
+                children: [
+                  // SEJARAH
+                  Expanded(
+                    flex: 3,
+                    child: Padding(
+                      padding: EdgeInsets.all(15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Sejarah",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            "Pantai Wonogoro di Malang Selatan awalnya dikenal sebagai wilayah pesisir tersembunyi. "
+                            "Pada September 2023, pantai ini viral karena fenomena aliran muara sungai yang menuju ke tengah pantai. "
+                            "Pantai Wonogoro terletak di Desa Tumpakrejo, Kecamatan Gedangan, Malang dan dikelola oleh BUMDes Samudra Emas Tumpakrejo.",
+                            style: TextStyle(
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+                  Container(
+                    width: 1,
+                    color: Colors.grey,
+                  ),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.all(15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Lokasi",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            "Dusun Sukorejo, Tumpakrejo, Gedangan, "
+                            "Malang Regency,East Java",
+                            style: TextStyle(
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            // =====================
+            // CONTACT
+            // =====================
+            Expanded(
+              flex: 1,
+              child: Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  children: [
+                    Icon(
+                      Icons.email_outlined,
+                      size: 25,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "Contact",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
